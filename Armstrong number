@@ -1,0 +1,30 @@
+// Armstrong number  153 = 1*1*1 + 5*5*5 + 3*3*3
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n,originalnum,rem;
+    int count = 0;
+    int armsum = 0;
+    printf("Enter the number : ");
+    scanf("%d", &originalnum);
+    
+    n = originalnum;
+    while(n != 0){
+        n = n / 10;
+        count++;
+    }
+    n = originalnum;
+    while(n != 0){
+        rem = n % 10;
+        armsum = armsum + pow(rem, count);
+        n = n / 10;
+    }
+    if(armsum == originalnum){
+        printf("The given number is Armstrong !");
+    } else {
+        printf("The given number is not Armstrong !");
+    }
+    return 0;
+}
