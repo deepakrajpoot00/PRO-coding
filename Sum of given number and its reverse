@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n,s;
+    int r = 0;
+    printf("Enter a number : ");
+    scanf("%d", &n);
+    
+    s = n;
+    while(n != 0){
+        r = r * 10 + n % 10;
+        n = n / 10;
+    }
+    printf("Reverse = %d\n", r);
+    
+    int sum;
+    sum = r + s;
+    printf("Sum = %d\n", sum);
+    
+    return 0;
+}
