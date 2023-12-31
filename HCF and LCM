@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int calculateHCF(int a, int b) {
+    int temp;
+    while (b != 0) {
+        temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int calculateLCM(int a, int b) { 
+    int l = (a * b) / calculateHCF(a, b);
+    return l;
+}
+
+int main() {
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+    
+    int hcf = calculateHCF(num1, num2);
+    printf("HCF of %d and %d is: %d\n", num1, num2, hcf);
+    
+    int lcm = calculateLCM(num1, num2);
+    printf("LCM of %d and %d is: %d\n", num1, num2, lcm);
+    
+    return 0;
+}
