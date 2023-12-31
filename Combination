@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+long long factorial(int x){
+    long long fact = 1;
+    for(int i=1 ; i<=x ; i++){
+        fact = fact * i;
+    }
+    return fact;
+}
+
+long long combination(int n, int r){
+    long long ncr = factorial(n) / (factorial(r) * factorial(n-r));
+    return ncr;
+}
+
+int main() {
+    int n, r;
+    printf("Enter n : ");
+    scanf("%d", &n);
+    
+    printf("Enter r : ");
+    scanf("%d", &r);
+    
+    long long ncr = combination(n, r);
+    printf("C(%d,%d) = %lld", n, r, ncr);
+    
+    return 0;
+}
