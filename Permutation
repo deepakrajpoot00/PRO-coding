@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+long long factorial(int x){
+    long long fact = 1;
+    for(int i=1 ; i<=x ; i++){
+        fact = fact * i;
+    }
+    return fact;
+}
+
+long long permutation(int n, int r){
+    long long ncr = factorial(n) / factorial(n-r);
+    return ncr;
+}
+
+int main() {
+    int n, r;
+    printf("Enter n : ");
+    scanf("%d", &n);
+    
+    printf("Enter r : ");
+    scanf("%d", &r);
+    
+    long long ncr = permutation(n, r);
+    printf("P(%d,%d) = %lld", n, r, ncr);
+    
+    return 0;
+}
